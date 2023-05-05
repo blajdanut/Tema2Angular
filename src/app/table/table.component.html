@@ -1,0 +1,24 @@
+<nz-table #basicTable [nzData]="recipes">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ingredients</th>
+      <th>Prep Time</th>
+      <th>Cook Time</th>
+      <th>Category</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let recipe of basicTable.data">
+      <td>{{recipe.name}}</td>
+      <td>{{recipe.ingredients}}</td>
+      <td>{{recipe.prepTime}}</td>
+      <td>{{recipe.cookTime}}</td>
+      <td>{{recipe.category}}</td>
+      <td>
+        <button class="editButton" (click)="updateRecipe(recipe)">Update</button>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
